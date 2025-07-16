@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title> EXAMPLE </title>
+    </head>
+    <body>
+        <h1> this is an example using array</h1>
+        <script>
+            let student = [
+                name= "Sreecharan",
+                age= 18,
+                addr= "BOM"
+            ];
+            localStorage.setItem("student", JSON.stringify(student));
+            let starr = JSON.parse(localStorage.getItem("student"));
+            console.log("Student name: " + starr[0]);
+            console.log("Student age: " + starr[1]);
+            console.log("Student address: " + starr[2]);
+        </script>
+    </body>
+    </html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Grid</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+
+    <style>
+        .parent{
+            background-color: red;
+            /* 
+                width: 1000px;
+                height: 700px;
+            */
+            display: grid;
+            grid-template-columns: 10% 10% 10%;
+            grid-template-rows: 10% 10% 10% 10%;
+            
+            
+        }
+        #one{
+            background-color: aqua;
+            grid-column: 1/ 4;
+            
+        }
+        #two{
+            background-color: lawngreen;
+            grid-row:2 / 4;
+        }
+        #three{
+            background-color: blue;
+            grid-column: 2/ 4;
+        }
+        #four{
+            background-color: yellow;
+            grid-column:2/4;
+        }
+        #five{
+            background-color: orange;
+            grid-column: 1/4;
+        }
+
+
+    </style>
+
+    <body>
+        <div class="parent">
+            <div id="one">1</div>
+            <div id="two">2</div>
+            <div id="three">3</div>
+            <div id="four">4</div>
+            <div id="five">5</div>
+        </div>
+
+        
+       
+    </body>
+</html>

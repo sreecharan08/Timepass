@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title> Student details </title>
+    </head>
+    <body>
+        <h1> Student details </h1>
+    <script>
+        document.write("-------------Student Details-----------------<br>")
+                let st_id=prompt("Enter Student id: ")
+                let st_name=prompt("Enter Student name: ")
+                let st_class=prompt("Enter Student class: ")
+                let st_ph_num=prompt("Enter Student phone Number: ")
+                document.write("Student ID: " + st_id + "<br>");
+                document.write("Student Name: " + st_name + "<br>");
+                document.write("Student Class: " + st_class + "<br>");
+                document.write("Student Phone Number: " + st_ph_num + "<br>");
+        document.write("-------------Student Marks-----------------<br>")
+                let eng = Number(prompt("Enter Student Marks in English: "));
+                let hin = Number(prompt("Enter Student Marks in Hindi: "));
+                let maths = Number(prompt("Enter Student Marks in Maths: "));
+                let sci = Number(prompt("Enter Student Marks in Science: "));
+                let sst = Number(prompt("Enter Student Marks in SST: "));
+                let Gk = Number(prompt("Enter Student Marks in Gk: "));
+
+                document.write("Marks obtained in English: " + eng + "<br>")
+                document.write("Marks obtained in Hindi: " + hin + "<br>")
+                document.write("Marks obtained in Maths: " + maths + "<br>")
+                document.write("Marks obtained in Science: " + sci + "<br>")
+                document.write("Marks obtained in SST: " + sst + "<br>")
+                document.write("Marks obtained in Gk: " + Gk + "<br>")
+
+                document.write("-----------Total Marks-------------<br>")
+                let add = eng + hin + maths + sci + sst + Gk;
+                document.write("Total marks obtained in all subjects: " + add)
+                document.write("<hr>")
+
+            </script>
+            </body>
+        </html>
+

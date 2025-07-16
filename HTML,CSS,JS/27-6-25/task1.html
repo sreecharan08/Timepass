@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title> Task </title>
+
+        <style>
+            .parent>div{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 2em;
+                font-weight: bold;
+                color: white;
+            }
+.parent{
+display: grid;
+height: 98vh;
+grid-template-columns: 10% 80% 10%;
+grid-template-rows: 10% 80% 10%;
+grid-gap:2px;
+}
+#o{
+background-color: lightblue;
+grid-column-start:1;
+grid-column-end:4;
+}
+#tw{
+background-color: yellow;
+}
+#th{
+background-color:green;
+}
+#fr{
+background-color: orange;
+}
+#fv{
+background-color: pink;
+grid-column-start:1;
+grid-column-end:4;
+}
+
+        </style>
+</head>
+<body>
+<div class="parent">
+<div id="o">Header</div>
+<div id="tw">Side Bar</div>
+<div id="th">Main</div>
+<div id="fr">Side Bar</div>
+<div id="fv">Footer</div>
+
+</div>
+</body>

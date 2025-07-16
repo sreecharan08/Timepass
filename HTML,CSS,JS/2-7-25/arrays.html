@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>Arrays & Methods</title>
+    </head>
+    <body style="background-color:lightblue;color:black">
+        <script>
+            let names = ["Akash","Hari","Thrinadh","Madani","Chollay"]
+            let fruits  = ["Cherry","Mango","Apple","Jackfruit","Kiwi"]
+            let animals = ["Monkey","Lion","Tiger","Panda","Elephant"]
+            let arr = []
+            let arr1 = new Array()
+                        
+            document.write(arr +" "+ typeof arr + "<br>")
+            document.write(arr1 +" "+ typeof arr1 + "<br>")
+            document.write(names + "<br>")
+            document.write(names [2] + "<br>")//accessing 3rd element in the array
+            
+            document.write("=========elements to print by using for loop=======<br>")
+            for(let i=0;i<names.length;i++)
+            {
+                document.write("element is: "+names[i] + "<br>")
+            }
+            
+            document.write("=========elements to print by using for...of loop=======<br>")
+            for (let name of names){
+                document.write("element is: " + name + "<br>")
+            }
+            document.write("=========elements to print by using for...in loop=======<br>")
+            for(let index in names){
+                document.write("element is: " + names[index] + "<br>")
+            }
+
+            document.write("-----arrays names-----<br>")
+            names.push("shreya")//ending
+            names.unshift("Sreecharan")//satrting
+            names.pop() //ending
+            names.shift()//remove satrt
+            names.splice(0,1, "Ashwith", "pratishtha")
+            let extrct = names.slice(1,4)
+            document.write(extrct + "<br>")
+            document.write(names.concat(fruits, animals) + "<br>")
+            document.write("arrays to string conversion--<br>")
+            let str = names.toString()
+            document.write(str + "<br>")
+            document.write(names.join('') + "<br>")
+            document.write(names.join(',') + "<br>")
+            document.write(names.join('-') + "<br>")
+            document.write(fruits.indexOf("Apple") + "<br>")
+            document.write(fruits.lastIndexOf("Apple") + "<br>")
+            let sorted = fruits.sort()
+            document.write(sorted + "<br>")
+            let values = [10, 20,5,2,100,50,77,40,3,4]
+            //document.write(values.sort());
+            document.write(values.sort(
+                function(a, b) {
+                    return a - b; // Ascending order
+                }
+            ) + "<br>");
+            //finding max element greater than 30
+            document.write(values.findIndex(function(element) {
+                return element > 30;
+            }) + "<br>");
+
+            document.write(values.filter(function(element) {
+                return element > 30;
+            }) + "<br>");//filter elements greater than 30
+             document.write(values.filter(element => element%2 == 0) + "<br>");//filter even numbers
+
+             document.write(values.filter(element => element+5) + "<br>");
+             
+            
+            </script>
+     </body>
+</html>

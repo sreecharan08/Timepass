@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>promises</title>
+        <body>
+            <script>
+                function getData()
+                {
+                    return new Promise((resolve,reject)=>{
+                        setTimeout(()=>{
+                            const data="data received from the server"
+                            resolve(data)
+                        },3000)
+                    })
+                }
+               async function fetchData()
+                {
+                    try{
+                    let result=await getData()
+                    console.log("asynch/wait/result",result)
+                    }
+                    catch(err)
+                    {
+                        console.log("error:",err)
+                    }
+                }
+                fetchData()
+            
+            </script>
+        </body>

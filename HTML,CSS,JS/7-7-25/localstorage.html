@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title> Local storage </title>
+    </head>
+    <body>
+        <h1> This is a Local storage</h1>
+        <script>
+            localStorage.setItem("100", "Nithin");
+            localStorage.setItem("101", "Pradeep");
+            localStorage.setItem("102", "Hari");
+            localStorage.setItem("103", "Akash");
+            localStorage.removeItem("102");
+            let name = localStorage.getItem("103");
+            console.log("Employee Name : " + name);
+            console.log(localStorage.length);
+        </script>
+    </body>
+    </html>

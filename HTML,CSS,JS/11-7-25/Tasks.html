@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Profile Card</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #eef2f3;
+      padding: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    input, textarea, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+    }
+    .cards-container {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      width: 250px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+      position: relative;
+    }
+    .card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+    .square img { border-radius: 0%; }
+    .rounded img { border-radius: 15%; }
+    .circle img { border-radius: 50%; }
+    .card button {
+      margin: 5px 5px 0 5px;
+      padding: 5px 10px;
+      width: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Create Profile Card</h2>
+  <form id="cardForm">
+    <div class="form-group">
+      <label>Name:</label>
+      <input type="text" id="name" required />
+    </div>
+    <div class="form-group">
+      <label>Bio:</label>
+      <textarea id="bio" required></textarea>
+    </div>
+    <div class="form-group">
+      <label>Image:</label>
+      <input type="file" id="image" accept="image/*" required />
+    </div>
+    <div class="form-group">
+      <label>Border Style:</label>
+      <select id="borderStyle" required>
+        <option value="square">Square</option>
+        <option value="rounded">Rounded</option>
+        <option value="circle">Circle</option>
+      </select>
+    </div>
+    <input type="hidden" id="editIndex" value="-1">
+    <button type="submit">Generate Card</button>
+  </form>
+
+  <div class="cards-container" id="cardsContainer"></div>
+
+  <script>
+    let cards = [];
+
+    document.getElementById('cardForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const bio = document.getElementById('bio').value;
+      const imageFile = document.getElementById('image').files[0];
+      const borderStyle = document.getElementById('borderStyle').value;
+      const editIndex = parseInt(document.getElementById('editIndex').value);
+
+      if (!imageFile && editIndex === -1) return alert("Please select an image.");
+
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        const imageData = event.target.result;
+
+        const newCard = {
+          name,
+          bio,
+          image: imageData,
+          style: borderStyle
+        };
+
+        if (editIndex === -1) {
+          cards.push(newCard);
+        } else {
+          cards[editIndex] = newCard;
+        }
+
+        renderCards();
+        document.getElementById('cardForm').reset();
+        document.getElementById('editIndex').value = -1;
+      };
+
+      if (imageFile) {
+        reader.readAsDataURL(imageFile);
+      } else {
+        // If no new image selected, reuse old image
+        newCard.image = cards[editIndex].image;
+        cards[editIndex] = newCard;
+        renderCards();
+        document.getElementById('cardForm').reset();
+        document.getElementById('editIndex').value = -1;
+      }
+    });
+
+    function renderCards() {
+      const container = document.getElementById('cardsContainer');
+      container.innerHTML = '';
+      cards.forEach((card, index) => {
+        const cardHTML = `
+          <div class="card ${card.style}" data-index="${index}">
+            <img src="${card.image}" alt="Profile">
+            <h3>${card.name}</h3>
+            <p>${card.bio}</p>
+            <button onclick="editCard(${index})">Edit</button>
+            <button onclick="deleteCard(${index})">Delete</button>
+          </div>
+        `;
+        container.innerHTML += cardHTML;
+      });
+    }
+
+    function editCard(index) {
+      const card = cards[index];
+      document.getElementById('name').value = card.name;
+      document.getElementById('bio').value = card.bio;
+      document.getElementById('borderStyle').value = card.style;
+      document.getElementById('editIndex').value = index;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function deleteCard(index) {
+      if (confirm("Are you sure you want to delete this card?")) {
+        cards.splice(index, 1);
+        renderCards();
+      }
+    }
+  </script>
+
+</body>
+</html>

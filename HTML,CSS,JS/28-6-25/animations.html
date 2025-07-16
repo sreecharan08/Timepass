@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Animation</title>
+        <style>
+            div {
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                animation-name: moye;
+                animation-duration: 0.002s;
+                animation-iteration-count: 30;
+                animation-delay: 03s;
+                position: relative;
+                animation-direction: forwards;
+            }
+            @keyframes moye {
+                0% {
+                    top: 0px;
+                    left: 0px;
+                    background-color: darkred;
+                }
+                25% {
+                    top: 0px;
+                    left: 300px;
+                    background-color: darkblue;
+                    border-radius: 25%;
+                    transform: scale(1.5, 1.5);
+                }
+                50% {
+                    top: 300px;
+                    left: 300px;
+                    background-color: yellow;
+                    border-radius: 50%;
+                }
+                75% {
+                    top: 300px;
+                    left: 0px;
+                    background-color: gold;
+                    border-radius: 75%;
+                }
+                100% {
+                    top: 0px;
+                    left:0px;
+                    background-color: orange;
+                    border-radius: 100%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div>Hi</div>
+    </body>
+</html>

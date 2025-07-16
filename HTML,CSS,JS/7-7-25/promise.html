@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Promise</title>
+    </head>
+    <body>
+        <script>
+            // synchronous operation
+            console.log("1")
+            console.log("2")
+            console.log("3")
+            console.log("4")
+            // asynchronous operation
+            console.log("1")
+            setTimeout(()=>{console.log("2")},3000)
+            console.log("3")
+            console.log("4")
+            // callback hell example
+            /*
+            getUser(function(user){
+                getMarks(function(marks){
+                    getResult(function(result){
+                        // handle result
+                    });
+                });
+            });
+            */
+
+
+
+
+            let marks = 90;
+
+            
+            let p = new Promise((pass,fail) =>{
+                if(marks>=35){
+                    pass("Congratulations u have passed your exam")
+                }
+                else{
+                    fail("U have failed ur exam")
+                }
+            })
+            console.log(p)
+            p.then(msg=>{document.write(msg)})
+            p.catch(err=>{document.write(err)})
+        </script>

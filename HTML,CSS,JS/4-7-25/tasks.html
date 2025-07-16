@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg,rgb(28, 13, 240) 0%,rgb(23, 213, 45) 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px black;
+            padding: 30px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h1 {
+            color: #4a90e2;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        .input-section {
+            margin-bottom: 30px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: #4a90e2;
+        }
+
+        .add-btn {
+            background-color: #f0f0f0;
+            border: 2px solid #d0d0d0;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .add-btn:hover {
+            background-color: #e0e0e0;
+            border-color: #c0c0c0;
+        }
+
+        .task-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .task-item {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .task-item:hover {
+            background-color: #e9ecef;
+        }
+
+        .task-text {
+            flex-grow: 1;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .delete-btn {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .delete-btn:hover {
+            background-color: #c82333;
+        }
+
+        .empty-state {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            padding: 40px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>To-Do List</h1>
+        
+        <div class="input-section">
+            <input type="text" id="taskInput" placeholder="Enter a new task">
+            <button class="add-btn" onclick="addTask()">Add Task</button>
+        </div>
+
+        <ul class="task-list" id="taskList">
+            <li class="task-item">
+                <span class="task-text">Hari</span>
+                <button class="delete-btn" onclick="deleteTask(this)">Delete</button>
+            </li>
+            <li class="task-item">
+                <span class="task-text">Akash</span>
+                <button class="delete-btn" onclick="deleteTask(this)">Delete</button>
+            </li>
+           
+             <li class="task-item">
+                <span class="task-text">Thrinadh</span>
+                <button class="delete-btn" onclick="deleteTask(this)">Delete</button>
+            </li>
+             <li class="task-item">
+                <span class="task-text">Roshan(Scientist)</span>
+                <button class="delete-btn" onclick="deleteTask(this)">Delete</button>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        let tasks = ['Hari', 'Akash', 'Thrinadh','Roshan(Scientist)'];
+
+        function addTask() {
+            const taskInput = document.getElementById('taskInput');
+            const taskText = taskInput.value.trim();
+            
+            if (taskText === '') {
+                alert('Please enter a task!');
+                return;
+            }
+
+            tasks.push(taskText);
+            taskInput.value = '';
+            renderTasks();
+        }
+
+        function deleteTask(button) {
+            const taskItem = button.parentElement;
+            const taskText = taskItem.querySelector('.task-text').textContent;
+            const taskIndex = tasks.indexOf(taskText);
+            
+            if (taskIndex > -1) {
+                tasks.splice(taskIndex, 1);
+            }
+            
+            renderTasks();
+        }
+
+        function renderTasks() {
+            const taskList = document.getElementById('taskList');
+            taskList.innerHTML = '';
+
+            if (tasks.length === 0) {
+                taskList.innerHTML = '<div class="empty-state">No tasks yet. Add one above!</div>';
+                return;
+            }
+
+            tasks.forEach(task => {
+                const li = document.createElement('li');
+                li.className = 'task-item';
+                li.innerHTML = `
+                    <span class="task-text">${task}</span>
+                    <button class="delete-btn" onclick="deleteTask(this)">Delete</button>
+                `;
+                taskList.appendChild(li);
+            });
+        }
+
+       
+        document.getElementById('taskInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                addTask();
+            }
+        });
+
+       
+        renderTasks();
+    </script>
+</body>
+</html>

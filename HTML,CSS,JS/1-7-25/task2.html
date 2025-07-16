@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Function task2</title>
+    </head>
+    <body>
+        <script>
+              let userGuess = Number(prompt("Enter the number"))
+        function guessNumber(userGuess)
+        {
+         if( userGuess < 3){
+            document.write("Your dehydrated,drink more water")
+         }
+         else if( 3<userGuess < 7){
+            document.write("Good job keep it up")
+         }
+         else if(userGuess == 7){
+            document.write("Excellent Stay Hyderated")
+         }
+         else{
+            document.write("Invalid")
+         }
+        }
+        guessNumber();
+        </script>
+    
+    </body>
+</html>

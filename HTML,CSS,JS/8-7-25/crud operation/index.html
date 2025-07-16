@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Employee Management System</title>
+    <meta name="description" content="Employee CRUD Operations">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Employee Management System</h1>
+    
+    <form id="employeeForm">
+        <input type="text" id="employeeName" placeholder="Employee Name" required>
+        <input type="text" id="employeeTitle" placeholder="Employee Title" required>
+        <button type="submit">Add Employee</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Employee Name</th>
+                <th>Employee Title</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="employeeList">
+            <!-- Employee rows will be inserted here -->
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>

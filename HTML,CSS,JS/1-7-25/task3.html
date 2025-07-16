@@ -1,0 +1,31 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+</head>
+<body>
+    <h1>Your device charging</h1>
+    
+    
+
+    <script>
+        function batterypercentage() {
+            const bat = Number(prompt("Enter your device battery percentage: "));
+            let message = "";
+            if (bat < 20) {
+                message = "Charge Now";
+            } else if (bat >= 20 && bat < 80) {
+                message = "battery ok";
+            } else {
+                message = "Fully Charge";
+            }
+            return { bat, message };
+        }
+
+        const result = batterypercentage();
+        document.write("<p>Your choice is " + result.bat + "</p>");
+        document.write("<p>" + result.message + "</p>");
+    </script>
+</body>
+</html>

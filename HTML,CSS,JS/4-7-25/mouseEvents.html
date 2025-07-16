@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Events</title>
+</head>
+<body>
+    <h2>Mouse Events</h2>
+    <button onclick="alert('You are hacked!!!!')">Click me</button>
+    <button onclick="hack()">Don't Click me</button>
+    <p oncontextmenu="para()">Hi this is a paragraph</p>
+    <button ondblclick="db()">Double Click me</button>
+    <div id="Demo" onmouseover="over()" onmouseout="out()">
+        <p>I am a DIV tag</p>
+    </div>
+    <br><br>
+    <button id="test" onmouseup="up()" onmousedown="down()">Draw</button>
+
+    <script>
+    function hack() {
+        alert("Yor laptop is hacked");
+    }
+    function para() {
+        alert("You have right clicked on this page");
+        return false;
+    }
+    function db() {
+        alert("You have Double clicked......Now your laptop is gone");
+    }
+    function over() {
+        var div = document.getElementById("Demo");
+        div.style.backgroundColor = "red";
+        div.style.height = "300px";
+        div.style.width = "300px";
+    }
+    function out() {
+        let div = document.getElementById("Demo");
+        div.style.backgroundColor = "blue";
+        div.style.height = "100px";
+        div.style.width = "300px";
+    }
+    function up() {
+        let dr = document.getElementById("test");
+        dr.innerText = "Still Drawing...";
+        dr.style.backgroundColor = "aqua";
+    }
+    function down() {
+        let dr = document.getElementById("test");
+        dr.innerText = "Drawing completed";
+        dr.style.backgroundColor = "yellow";
+    }
+    </script>
+</body>
+</html>

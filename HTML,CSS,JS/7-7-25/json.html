@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>JSON</title>
+    </head>
+    <body>
+        <h1>Example</h1>
+        <script>
+            let student = {
+                name: "Sreehari",
+                age: 1222,
+                addr: "HYD",
+            }
+                        localStorage.setItem("student", JSON.stringify(student));
+                        let stobj=JSON.parse(localStorage.getItem("student"))
+                        console.log("Student name: "+stobjname)
+                        console.log("Student age:"+stobj.age)
+                        console.log("Student adres : "+stobj.address)
+
+                        
+                    </script>
+                </body>
+            </html>

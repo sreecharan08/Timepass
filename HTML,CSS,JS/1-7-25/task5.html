@@ -1,0 +1,34 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+</head>
+<body>
+    <h1>check your device charging tym</h1>
+
+
+    <script>
+        function chartym() {
+            const device = prompt("Enter (phone,laptop,tablet): ");
+            let message = "";
+            switch(device){
+                case "phone":
+                    message = "2 hrs";
+                    break;
+                case "laptop":
+                    message = "3 hrs";
+                    break;
+                case "tablet":
+                    message = "2.5 hrs";
+                    break;
+                default:
+                    message = "Invalid device!";
+            }
+            document.write("<p>Your choice is " + device + "</p>");
+            document.write("<p>" + message + "</p>");
+        }
+        chartym();
+    </script>
+</body>
+</html>

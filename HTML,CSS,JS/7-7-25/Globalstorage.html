@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>Local storage</title>
+</head>
+<body>
+    <h1>This is a Session storage</h1>
+    <script>
+        sessionStorage.setItem("100", "Nithin");
+        sessionStorage.setItem("101", "Pradeep");
+        sessionStorage.setItem("102", "Hari");
+        sessionStorage.setItem("103", "Akash");
+        sessionStorage.removeItem("102");
+        let name = sessionStorage.getItem("103");
+        console.log("Employee Name : " + name);
+        console.log(sessionStorage.length);
+    </script>
+</body>
+</html>

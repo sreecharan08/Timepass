@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Crud operations</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1> Employee details</h1>
+        <form id="employeeForm">
+        <input type="text" id="employeeName" placeholder="Employee Name" required>
+        <input type="text" id="employeeTitle" placeholder="Employee Title" required>
+        <button type="submit">Add Employee</button>
+        </form>
+
+        <table>
+        <thead>
+        <tr>
+            <th>Employee Name</th>
+            <th>Employee Title</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody id="employeeList">
+
+        </tbody>
+    </table>
+
+        
+        <script src="script.js" async defer></script>
+    </body>
+</html>

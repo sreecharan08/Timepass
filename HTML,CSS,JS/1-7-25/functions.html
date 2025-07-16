@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUNCTIONS</title>
+    </head>
+<body>
+    <h1>Types of Functions</h1>
+    <script>
+
+      /*   document.write("================IIFE Function============"+"<br>")
+        (function()
+    {
+        document.write("i am IIFE function"+"<br>")
+    })();*/
+
+    
+        function Greet()
+        {
+         document.write("i am named function...")
+        }
+        Greet();
+        document.write("<hr>")
+
+        document.write("i am default function..."+"<br>")
+        function GetSalary(salary=10000)
+        {
+            document.write("Internship salary is:"+salary+"<br>")
+        }
+        GetSalary();
+        GetSalary(12000);
+
+        document.write("i am anonymous function..."+"<br>")
+
+        let result=function()
+        {
+            document.write("i am name less function"+"<br>")
+        }
+        result();
+
+        document.write("i am Arrow function..."+"<br>")
+
+    let answr=()=>{document.write("i am a student using arrow function"+"<br>")}
+    answr();
+
+    let sum= (a,b)=>{return a+b;}
+    document.write("result is "+sum(12,12)+"<br>")
+    document.write("result is "+sum(32,45)+"<br>")
+
+    function Employee(name,salary)
+    {
+        this.name=name;
+        this.salary=salary
+    }
+
+    let emp=new Employee("hari",45000)
+    let emp1=new Employee("Sree charan",45000)
+    document.write("Employee name is"+emp.name+"<br>")
+    document.write("Employee salary is"+emp.salary+"<br>")
+    document.write("Employee name is"+emp1.name+"<br>")
+    document.write("Employee salary is"+emp1.salary+"<br>")
+
+    document.write("i am call back function..."+"<br>")
+
+    function Demo(name,fun)
+    {
+        document.write("my pichi frnd name is:"+name)
+        fun();
+    }
+    function Sleeping()
+    {
+        document.write("I am not listening class....")
+    }
+    Demo("Akash")
+    
+
+
+    </script>
+</body>
+</html>

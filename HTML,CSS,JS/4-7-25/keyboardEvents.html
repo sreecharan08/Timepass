@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Keyboard Events Example</title>
+    </head>
+    <body>
+        Username : <input
+        type="text"
+        id="uname"
+        placeholder="enter username"
+        onkeyup="keyUp()"
+        onkeydown="keyDown()"
+
+
+/>
+
+        <hr>
+        <form onsubmit="validateForm(event)">
+        Username : <input type="text" placeholder="enter username" required/>
+        <button type="submit">Submit</button>
+        </form>
+
+        <br><br>
+        <hr>
+        <h2>Onchange Event</h2>
+        <select onchange="changeTheme(this)">
+        <option value="">Choose Theme</option>
+        <option value="lightblue">Light blue</option>
+        <option value="pink">Pink</option>
+        <option value="red">Red</option>
+        <option value="yellow">Yellow</option>
+        </select>
+
+        <script>
+            function changeTheme(select){
+                document.body.style.backgroundColor = select.value;
+            }
+            function keyUp() {
+                let uname = document.getElementById("uname");
+                uname.style.border = "3px solid red";
+                uname.style.backgroundColor = "aqua";
+            }
+
+            function keyDown() {
+                let uname = document.getElementById("uname");
+                uname.style.border = "3px solid blue";
+                uname.style.backgroundColor = "yellow";
+            }
+
+            function validateForm(event){
+                event.preventDefault();
+                alert("Form submitted successfully ");
+            }
+        </script>
+    </body>
+</html>

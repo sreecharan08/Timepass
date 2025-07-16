@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Boxes</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+            display: inline-block;
+            text-align: center;
+            line-height: 200px;
+            font-size: 20px;
+            color: black;
+        }
+        .box:nth-child(1) {
+            background: lightpink;
+        }
+        .box:nth-child(2) {
+            background: violet;
+        }
+        .box:nth-child(3) {
+            background: pink;
+        }
+        .box:nth-child(4) {
+            background: lightgreen;
+        }
+        .box:nth-child(5) {
+            background: yellow;
+        }
+        @media (min-width:1201px) {
+            .box {
+                background: aqua;
+                font-size: 30px;
+            }
+        }
+        @media (min-width:900px) and (max-width:1200px) {
+            .box {
+                background: blue;
+                font-size: 25px;
+            }
+        }
+        @media (min-width:600px) and (max-width:900px) {
+            .box {
+                background: green;
+                font-size: 20px;
+                color: green;
+            }
+        }
+        @media(max-width:600px) {
+            .box {
+                background: red;
+                font-size: 15px;
+                color: black;
+                width:100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">This is box 1</div>
+    <div class="box">This is box 2</div>
+    <div class="box">This is box 3</div>
+    <div class="box">This is box 4</div>
+    <div class="box">This is box 5</div>
+</body>
+</html>

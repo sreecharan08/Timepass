@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Objects</title>
+    </head>
+    <body>
+        <script>
+            let obj = {};
+            document.write(obj+"<br>");
+            document.write(typeof obj+"<br>");
+
+            document.write("<hr>")
+
+            const person = {
+                name:"Sreehari",
+                age:100000000,
+                address:"kunnur",
+            }
+            document.write("name: " + person["name"] + "<br>");
+            document.write("age: " + person["age"] + "<br>");
+            document.write("address: " + person["address"] + "<br>");
+
+            person.salary=69.69
+            document.write("Salary is: "+person["salary"]+"<br>");
+
+            document.write("<hr>")
+
+            for (p in person){
+                document.write(person[p]+"<br>")
+            }
+
+            document.write("<hr>")
+            const student={
+                name: "Hari",
+                age:10000000000000000000000000000000000000,
+                address: {
+                street: "talipoyil",
+                state: "kerala",
+                pincode: 500037,
+                },
+                contact:{
+                email:"haripilla.69@gamil.com",
+                phoneNumbers: {
+                personal:9876543498,
+                gardian: 4563789209
+                }
+            }
+        }
+        for (s in student)
+        {
+            for(c in contact){
+                document.write(c.contact[c]+"<br>")
+            }
+        }
+
+        </script>
+    </body>
+</html>

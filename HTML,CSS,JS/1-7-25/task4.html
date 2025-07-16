@@ -1,0 +1,31 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+</head>
+<body>
+    <h1>No.of days for shipping</h1>
+    
+    
+
+    <script>
+        function checkdelstat() {
+            const status = Number(prompt("Enter no.of days: "));
+            let message = "";
+            if (status === 0) {
+                message = "Order placed";
+            } else if (status >= 1 && status <= 3) {
+                message = "In transit";
+            } else {
+                message = "Delivered or late";
+            }
+            return { status, message };
+        }
+
+        const result = checkdelstat();
+        document.write("<p>Your choice is " + result.status + "</p>");
+        document.write("<p>" + result.message + "</p>");
+    </script>
+</body>
+</html>

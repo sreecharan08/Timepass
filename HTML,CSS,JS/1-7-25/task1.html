@@ -1,0 +1,33 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+</head>
+<body>
+    <h1>Number Guessing Game</h1>
+    <p>Try to guess a number (from 1 to 10)</p>
+    
+
+    <script>
+        function guessNumber() {
+            const userGuess = Number(prompt("Enter a number: "));
+            let message = "";
+            if (userGuess < 7) {
+                message = "Too low";
+            } else if (userGuess > 7) {
+                message = "Too high";
+            } else if (userGuess === 7) {
+                message = "Correct";
+            } else {
+                message = "Invalid input";
+            }
+            return { userGuess, message };
+        }
+
+        const result = guessNumber();
+        document.write("<p>Your choice is " + result.userGuess + "</p>");
+        document.write("<p>" + result.message + "</p>");
+    </script>
+</body>
+</html>

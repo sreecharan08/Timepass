@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Flow control</title>
+    </head>
+    <body>
+        <script>
+            let marks = Number(prompt("Enter marks of a Student: "));
+
+            if (marks > 90) {
+                document.write("Grade A");
+            }
+            else if (marks > 75 && marks <= 90) {
+                document.write("Grade B");
+            }
+            else if (marks > 65 && marks <= 75) {
+                document.write("Grade C");
+            }
+            else if (marks > 55 && marks <= 65) {
+                document.write("Grade D");
+            }
+            else if (marks >= 55) {
+                document.write("Pass");
+            }
+            else {
+                document.write("Fail");
+            }
+        </script>
+    </body>
+</html>

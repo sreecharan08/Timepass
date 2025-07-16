@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Color changing website</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.5s ease;
+    }
+
+    .hex-code {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #ffffff;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 8px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+    h3{
+        color: white;
+        font-size: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hex-code" id="hexCode">#7DECD4</div>
+  <button onclick="changeColor()">Click Me</button><br><br>
+  <button onclick="copyColor()">copy color</button>
+
+
+  <script>
+    function copyColor(){
+        const hexCode = document.getElementById('hexCode').textContent;
+        navigator.clipboard.writeText(hexCode).then(function() {
+            alert("Color code has been copied");
+        }, function(err) {
+            alert("Failed to copy color code");
+        });
+    }
+    function getRandomColor() {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    function changeColor() {
+      const newColor = getRandomColor();
+      document.body.style.backgroundColor = newColor;
+      document.getElementById('hexCode').textContent = newColor;
+    }
+
+    // Set initial background color
+    document.body.style.backgroundColor = '#7DECD4';
+  </script>
+<br>
+<br>
+
+  <center> 
+    <h3>copy the color code</h3>
+    </center>
+
+</body>
+</html>
