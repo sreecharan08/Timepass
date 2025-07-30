@@ -1,0 +1,159 @@
+/* === Layout and Container === */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9fafb;
+  padding: 20px;
+}
+
+.task-manager {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+}
+
+/* === Header === */
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.task-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* === Add Task Button === */
+.btn-primary {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  transform: translateY(-2px);
+}
+
+/* === Task Card === */
+.task-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+}
+
+.task-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.task-info h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.task-info p {
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+/* === Badge Styles === */
+.badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  text-transform: capitalize;
+}
+
+.badge.pending {
+  background: #fef9c3;
+  color: #ca8a04;
+}
+
+.badge.in-progress {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.badge.completed {
+  background: #d1fae5;
+  color: #059669;
+}
+
+/* === Action Buttons === */
+.task-actions {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+}
+
+.action-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.action-btn:hover {
+  background: #f3f4f6;
+}
+
+.action-btn.edit {
+  color: #2563eb;
+}
+
+.action-btn.delete {
+  color: #ef4444;
+}
+
+/* === Statistics Panel === */
+.stats {
+  margin-top: 32px;
+  padding: 16px;
+  border-radius: 12px;
+  background: #f9fafb;
+  font-size: 0.95rem;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.stats span {
+  font-weight: 500;
+  color: #374151;
+}
+
+.stats .pending {
+  color: #ca8a04;
+}
+
+.stats .in-progress {
+  color: #2563eb;
+}
+
+.stats .completed {
+  color: #059669;
+}
