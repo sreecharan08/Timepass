@@ -89,22 +89,24 @@ const Home = () => {
   return (
     <div>
       <h2>Welcome, {user.name}</h2>
-      <button onClick={handleLogout}>Logout</button>
-      <div>
+      <button onClick={handleLogout} className="btn btn-delete">Logout</button>
+      <div className="upload-section">
         <h3>Upload File</h3>
         <input type="file" onChange={handleFileChange} />
-        <button onClick={handleUpload}>Upload</button>
+        <button onClick={handleUpload} className="btn">Upload</button>
       </div>
       <div>
         <h3>Your Files</h3>
         <ul>
           {files.map((file) => (
             <li key={file._id}>
-              {file.filename}
-              <button onClick={() => handleDownload(file._id, file.filename)}>
-                Download
-              </button>
-              <button onClick={() => handleDelete(file._id)}>Delete</button>
+              <span>{file.filename}</span>
+              <div>
+                <button onClick={() => handleDownload(file._id, file.filename)} className="btn">
+                  Download
+                </button>
+                <button onClick={() => handleDelete(file._id)} className="btn btn-delete">Delete</button>
+              </div>
             </li>
           ))}
         </ul>
